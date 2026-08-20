@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn ₹250 Instant Cashback</title>
+    <style>
+        * { box-sizing: border-box; font-family: sans-serif; }
+        body { background: #f4f6f9; padding: 20px; display: flex; justify-content: center; }
+        .card { background: #fff; padding: 25px; border-radius: 15px; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .banner { background: #28a745; color: white; padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 8px; }
+        button, .btn { width: 100%; background: #007bff; color: white; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
+        .step { display: none; }
+        .active { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    
+    <!-- Step 1: UPI Input -->
+    <div id="step1" class="step active">
+        <div class="banner">Complete Task & Get ₹250 Direct to Account</div>
+        <p>Apni UPI ID daalein:</p>
+        <input type="text" id="upiId" placeholder="Enter UPI ID (e.g. 9876543210@paytm)">
+        <button onclick="goToStep2()">Submit & Continue</button>
+    </div>
+
+    <!-- Step 2: App Download & Game UID -->
+    <div id="step2" class="step">
+        <div class="banner">Step 2: Download & Register</div>
+        <a href="YOUR_APP_LINK" target="_blank" class="btn" style="background:#ff9900; margin-bottom:15px;">1. Download App Now</a>
+        <input type="text" id="gameUid" placeholder="Enter Game UID">
+        <button onclick="submitData()">2. Submit UID</button>
+    </div>
+
+    <!-- Step 3: Success & Telegram -->
+    <div id="step3" class="step">
+        <div class="banner">Task Completed!</div>
+        <p><b>₹250 Cashback 24-48 hours me mil jayega.</b></p>
+        <a href="YOUR_TELEGRAM_LINK" target="_blank" class="btn" style="background:#0088cc;">Join Telegram Channel</a>
+    </div>
+
+</div>
+
+<script>
+    let userUPI = "";
+
+    function goToStep2() {
+        userUPI = document.getElementById('upiId').value;
+        if(!userUPI) return alert("Kripya UPI ID daalein!");
+        document.getElementById('step1').classList.remove('active');
+        document.getElementById('step2').classList.add('active');
+    }
+
+    function submitData() {
+        let gameUID = document.getElementById('gameUid').value;
+        if(!gameUID) return alert("Kripya Game UID daalein!");
+
+        fetch('YOUR_SHEETDB_API_URL', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "UPI ID": userUPI, "Game UID": gameUID, "Date": new Date().toLocaleString() })
+        }).then(() => {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+        }).catch(err => {
+            alert("Error aayi, dubara try karein");
+        });
+    }
+</script>
+
+</body>
+</html>
