@@ -24,9 +24,10 @@
             text-align: center; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
         }
-        .logo-box {
-            font-size: 65px;
-            line-height: 1;
+        .logo-img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
             margin-bottom: 10px;
         }
         .loot-title { 
@@ -112,8 +113,9 @@
 <body>
 
 <div class="card">
-    <!-- Gift Box Emoji Header -->
-    <div class="logo-box">🎁</div>
+    <!-- 3D Gift Box Image -->
+    <img src="https://i.imgur.com/7bGquC3.png" alt="Gift Box" class="logo-img">
+    
     <div class="loot-title">Get ₹30 Cash Loot</div>
     <div class="subtitle">Findo Lucky Special Task</div>
 
@@ -131,7 +133,7 @@
     <!-- Step 2: Complete Task Link -->
     <div id="step2" class="step">
         <p style="font-size:14px; color:#555;">Niche button par click karke <b>Findo Lucky Task</b> pura karein:</p>
-        <a href="https://t.me/findoluckybot/app?startapp=Njc5NDM2MzgxMF8x" target="_blank" class="btn" onclick="startRedirectSequence()">1. Go To Task Link</a>
+        <button class="btn" onclick="openTask()">1. Go To Task Link</button>
     </div>
 
     <!-- Step 3: Redirecting Animation -->
@@ -143,8 +145,8 @@
     <!-- Step 4: Join 2 Telegram Channels -->
     <div id="step4" class="step">
         <p style="font-size:14px; color:#555;">Verification ke liye <b>dono Channels</b> Join Karein:</p>
-        <a href="https://t.me/findolucky" target="_blank" class="btn btn-telegram">2. Join Telegram Channel 1</a>
-        <a href="https://t.me/+PIzW1L82h2g2Y2Nl" target="_blank" class="btn btn-telegram" onclick="completeVerification()">3. Join Telegram Channel 2</a>
+        <button class="btn btn-telegram" onclick="openChannel1()">2. Join Telegram Channel 1</button>
+        <button class="btn btn-telegram" onclick="openChannel2()">3. Join Telegram Channel 2</button>
     </div>
 
     <!-- Step 5: Verification Done & Final Success -->
@@ -176,7 +178,9 @@
         document.getElementById('step2').classList.add('active');
     }
 
-    function startRedirectSequence() {
+    function openTask() {
+        window.open("https://t.me/findoluckybot/app?startapp=Njc5NDM2MzgxMF8x", "_blank");
+
         setTimeout(() => {
             document.getElementById('step2').classList.remove('active');
             document.getElementById('step3').classList.add('active');
@@ -186,17 +190,22 @@
                 document.getElementById('step4').classList.add('active');
             }, 3000);
 
-        }, 1500);
+        }, 1000);
     }
 
-    function completeVerification() {
+    function openChannel1() {
+        window.open("https://t.me/findolucky", "_blank");
+    }
+
+    function openChannel2() {
+        window.open("https://t.me/+PIzW1L82h2g2Y2Nl", "_blank");
+
         setTimeout(() => {
             document.getElementById('step4').classList.remove('active');
             document.getElementById('step5').classList.add('active');
-        }, 1000);
+        }, 1500);
     }
 </script>
 
 </body>
 </html>
-
