@@ -3,71 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn ₹250 Instant Cashback</title>
+    <title>Get ₹30 Cash Loot - Findo Lucky</title>
     <style>
-        * { box-sizing: border-box; font-family: sans-serif; }
-        body { background: #f4f6f9; padding: 20px; display: flex; justify-content: center; }
-        .card { background: #fff; padding: 25px; border-radius: 15px; max-width: 400px; width: 100%; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .banner { background: #28a745; color: white; padding: 15px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; }
-        input { width: 100%; padding: 12px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 8px; }
-        button, .btn { width: 100%; background: #007bff; color: white; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: #6a1b9a; 
+            padding: 20px; 
+            margin: 0;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+        .card { 
+            background: #ffffff; 
+            padding: 25px 20px; 
+            border-radius: 20px; 
+            max-width: 380px; 
+            width: 100%; 
+            text-align: center; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+        }
+        .game-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .loot-title { 
+            color: #d81b60; 
+            font-size: 22px; 
+            font-weight: 800; 
+            margin-bottom: 5px; 
+        }
+        .subtitle { 
+            color: #2e7d32; 
+            font-weight: bold; 
+            font-size: 16px; 
+            margin-bottom: 15px; 
+        }
+        .cashback-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        input { 
+            width: 100%; 
+            padding: 14px; 
+            margin-bottom: 15px; 
+            border: 2px solid #ce93d8; 
+            border-radius: 10px; 
+            font-size: 15px;
+            outline: none;
+            text-align: center;
+        }
+        input:focus { border-color: #8e24aa; }
+        .btn { 
+            width: 100%; 
+            background: #66bb6a; 
+            color: white; 
+            padding: 14px; 
+            border: none; 
+            border-radius: 25px; 
+            font-weight: bold; 
+            font-size: 16px;
+            cursor: pointer; 
+            box-shadow: 0 4px 10px rgba(102, 187, 106, 0.4);
+            text-decoration: none;
+            display: block;
+        }
+        .btn:hover { background: #4caf50; }
+        .btn-telegram {
+            background: #0088cc;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.4);
+        }
+        .redirect-text {
+            color: #6a1b9a;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            font-size: 16px;
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
         .step { display: none; }
         .active { display: block; }
+        .success-box {
+            background: #f1f8e9;
+            border: 2px dashed #4caf50;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
-    
-    <!-- Step 1: UPI Input -->
+    <!-- Game Logo & Header -->
+    <img src="<img src="https://i.ibb.co/xxxxx/gift.jpg" alt="Findo Lucky" class="game-logo">
+    " alt="Findo Lucky" class="game-logo">
+    <div class="loot-title">Get ₹30 Cash Loot</div>
+    <div class="subtitle">Findo Lucky Special Task</div>
+
+    <div class="cashback-box">
+        <span>UPI</span>
+        <span>₹30 Instant Cashback</span>
+    </div>
+
+    <!-- Step 1: UPI Form -->
     <div id="step1" class="step active">
-        <div class="banner">Complete Task & Get ₹250 Direct to Account</div>
-        <p>Apni UPI ID daalein:</p>
-        <input type="text" id="upiId" placeholder="Enter UPI ID (e.g. 9876543210@paytm)">
-        <button onclick="goToStep2()">Submit & Continue</button>
+        <input type="text" id="upiId" placeholder="Enter Your UPI ID">
+        <button class="btn" onclick="submitUPI()">Submit & Complete Task</button>
     </div>
 
-    <!-- Step 2: App Download & Game UID -->
+    <!-- Step 2: Complete Task Link -->
     <div id="step2" class="step">
-        <div class="banner">Step 2: Download & Register</div>
-        <a href="https://t.me/findoluckybot/app?startapp=Njc5NDM2MzgxMF8x" target="_blank" class="btn" style="background:#ff9900; margin-bottom:15px;">1. Download App Now</a>
-        <input type="text" id="gameUid" placeholder="Enter Game UID">
-        <button onclick="submitData()">2. Submit UID</button>
+        <p style="font-size:14px; color:#555;">Niche button par click karke <b>Findo Lucky Task</b> pura karein:</p>
+        <a href="YOUR_TASK_GAME_LINK" target="_blank" class="btn" onclick="startRedirectSequence()">1. Go To Task Link</a>
     </div>
 
-    <!-- Step 3: Success & Telegram -->
+    <!-- Step 3: Redirecting Animation -->
     <div id="step3" class="step">
-        <div class="banner">Task Completed!</div>
-        <p><b>₹250 Cashback 24-48 hours me mil jayega.</b></p>
-        <a href="https://t.me/+PIzW1L82h2g2Y2Nl" target="_blank" class="btn" style="background:#0088cc;">Join Telegram Channel</a>
+        <button class="btn">Task Processing...</button>
+        <div class="redirect-text">REDIRECTING TO TELEGRAM.....</div>
+    </div>
+
+    <!-- Step 4: Join Telegram Channel -->
+    <div id="step4" class="step">
+        <p style="font-size:14px; color:#555;">Verification ke liye Telegram Channel Join Karein:</p>
+        <a href="YOUR_TELEGRAM_LINK" target="_blank" class="btn btn-telegram" onclick="completeVerification()">2. Join Telegram Channel</a>
+    </div>
+
+    <!-- Step 5: Verification Done & Final Success -->
+    <div id="step5" class="step">
+        <div class="success-box">
+            <h3 style="color:#2e7d32; margin:0 0 10px 0;">✅ Verification Done!</h3>
+            <p style="font-size: 15px; color: #333; margin: 0; font-weight: bold;">
+                Aapka cashback 36 se 48 ghante (36-48 Hours) ke andar aapke UPI account me credit ho jayega.
+            </p>
+        </div>
     </div>
 
 </div>
 
 <script>
-    let userUPI = "";
+    let savedUPI = "";
 
-    function goToStep2() {
-        userUPI = document.getElementById('upiId').value;
-        if(!userUPI) return alert("Kripya UPI ID daalein!");
+    function submitUPI() {
+        savedUPI = document.getElementById('upiId').value;
+        if(!savedUPI) return alert("Kripya apni UPI ID daalein!");
+
+        // SheetDB API Call
+        fetch('YOUR_SHEETDB_API_URL', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "UPI ID": savedUPI, "Status": "Started", "Date": new Date().toLocaleString() })
+        }).catch(err => console.log(err));
+
         document.getElementById('step1').classList.remove('active');
         document.getElementById('step2').classList.add('active');
     }
 
-    function submitData() {
-        let gameUID = document.getElementById('gameUid').value;
-        if(!gameUID) return alert("Kripya Game UID daalein!");
-
-        fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "UPI ID": userUPI, "Game UID": gameUID, "Date": new Date().toLocaleString() })
-        }).then(() => {
+    function startRedirectSequence() {
+        // Jab user task link par click karega, 2 sec baad redirecting dikhega
+        setTimeout(() => {
             document.getElementById('step2').classList.remove('active');
             document.getElementById('step3').classList.add('active');
-        }).catch(err => {
-            alert("Error aayi, dubara try karein");
-        });
+
+            // 3 second redirect animation ke baad Telegram Join dikhega
+            setTimeout(() => {
+                document.getElementById('step3').classList.remove('active');
+                document.getElementById('step4').classList.add('active');
+            }, 3000);
+
+        }, 1500);
+    }
+
+    function completeVerification() {
+        // Telegram join click karne par final success screen dikhegi
+        setTimeout(() => {
+            document.getElementById('step4').classList.remove('active');
+            document.getElementById('step5').classList.add('active');
+        }, 1000);
     }
 </script>
 
