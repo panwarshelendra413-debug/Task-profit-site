@@ -24,11 +24,11 @@
             text-align: center; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
         }
-        .logo-img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
+        .gift-box-svg {
+            width: 85px;
+            height: 85px;
             margin-bottom: 10px;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));
         }
         .loot-title { 
             color: #d81b60; 
@@ -113,8 +113,23 @@
 <body>
 
 <div class="card">
-    <!-- 3D Gift Box Image -->
-    <img src="https://i.imgur.com/7bGquC3.png" alt="Gift Box" class="logo-img">
+    <!-- Built-in Vector 3D Gift Box (Never Breaks) -->
+    <svg class="gift-box-svg" viewBox="0 0 64 64">
+        <!-- Box Base -->
+        <rect x="10" y="26" width="44" height="30" rx="3" fill="#FFD700"/>
+        <!-- Box Lid -->
+        <rect x="6" y="18" width="52" height="10" rx="2" fill="#FF8C00"/>
+        <!-- Ribbons Verticals -->
+        <rect x="28" y="18" width="8" height="38" fill="#FF0044"/>
+        <!-- Ribbon Horizontal -->
+        <rect x="6" y="21" width="52" height="4" fill="#E60039"/>
+        <!-- Bow Tie Left -->
+        <path d="M28 18 C18 6, 8 12, 28 18 Z" fill="#FF0044"/>
+        <!-- Bow Tie Right -->
+        <path d="M36 18 C46 6, 56 12, 36 18 Z" fill="#FF0044"/>
+        <!-- Center Star Accent -->
+        <polygon points="48,8 50,13 55,13 51,16 53,21 48,18 43,21 45,16 41,13 46,13" fill="#FFEE55"/>
+    </svg>
     
     <div class="loot-title">Get ₹30 Cash Loot</div>
     <div class="subtitle">Findo Lucky Special Task</div>
